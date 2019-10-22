@@ -1,0 +1,9 @@
+{
+    "name": "cccp1/framework",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/"
+        }
+    }
+}
