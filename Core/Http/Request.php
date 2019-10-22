@@ -2,6 +2,8 @@
 
 namespace Core\Http;
 
+use Core\Http\Session;
+
 /**
  * Класс Request, объект которого будет передоваться в каждый action 
  * 
@@ -41,6 +43,13 @@ class Request
      */
     public $FILES;
 
+    /**
+     * Объект класса Session
+     * 
+     * @var Session
+     */
+    public $session;
+
     public function __construct()
     {
         $this->POST = $_POST;
@@ -48,5 +57,7 @@ class Request
         $this->method = $_SERVER['REQUEST_METHOD'];
         $this->path = $_SERVER['REQUEST_URI'];
         $this->FILES = $_FILES;
+        $this->session = new Session();
+        $this->session->start();
     }
 }
